@@ -1,5 +1,6 @@
 let clear = document.querySelector("button");
 let container = document.querySelector(".container");
+let changeColor = document.querySelector(".changeClr");
 
 clear.addEventListener("click", () => {
   removeAllChildNodes(container);
@@ -26,8 +27,14 @@ function choiceUser() {
     divSquares.addEventListener("mouseover", (e) => {
       divSquares.style.backgroundColor = "red";
     });
+    changeColor.addEventListener("click", () => {
+      divSquares.addEventListener("mouseover", (e) => {
+        divSquares.style.backgroundColor =
+          "#" + Math.floor(Math.random() * 16777215).toString(16);
+        console.log(Math.floor(Math.random() * 16777215));
+      });
+    });
   }
-  console.log(number);
 }
 
 function createGrid(size) {
@@ -40,26 +47,24 @@ function createGrid(size) {
     divSquares.style.backgroundColor = "black";
     divSquares.style.border = " 1px solid white";
     container.appendChild(divSquares);
-
     divSquares.addEventListener("mouseover", (e) => {
       divSquares.style.backgroundColor = "red";
+    });
+
+    changeColor.addEventListener("click", () => {
+      divSquares.addEventListener("mouseover", (e) => {
+        divSquares.style.backgroundColor =
+          "#" + Math.floor(Math.random() * 16777215).toString(16);
+        console.log(Math.floor(Math.random() * 16777215));
+      });
     });
   }
 }
 
-createGrid(4);
+createGrid(8);
 
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
   }
 }
-
-// function questionGrid() {
-//   let choiceSquares;
-//   do {
-//     choiceSquares = prompt("quanti quadrati vuoi?", 64);
-//   } while ((choiceSquares < 2 || choiceSquares > 100) && choiceSquares);
-// }
-// choiceSquares = numberOfRows;
-// questionGrid();
