@@ -8,17 +8,18 @@ h1 {
     justify-content: center;
     margin-left: 60px;
     font-size: 80px;
-    color:lightslategrey;
+    color:red;
     text-shadow: 5px 5px 10px rgb(55, 55, 55);
     }
 
 .content {
     display: flex;
-    justify-content: center;
+    justify-content: center; 
+    /* margin-bottom: 150px; */
+    /* background-color: blueviolet; */
+    gap: 30px;
+    margin-top: 100px;
     align-items: center;
-    gap: 50px;
-    margin-top: 150px;
-    margin-right: 50px;
 }
 
 .container {
@@ -39,3 +40,4 @@ button {
     border-radius: 5px;
     margin-bottom: 400px;
 }
+
